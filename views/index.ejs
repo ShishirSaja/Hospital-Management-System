@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Hospital Management System</h1>
+    </div>
+
+    <div class="container">
+        <h2>Manage Patients</h2>
+        <form action="/add-patient" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required><br>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required><br>
+            <input type="submit" value="Add Patient">
+        </form>
+
+        <h3>Patient List</h3>
+        <ul>
+            <% patients.forEach(patient => { %>
+                <li><%= patient.name %> (Age: <%= patient.age %>, Phone: <%= patient.phone %>)</li>
+            <% }); %>
+        </ul>
+    </div>
+</body>
+</html>
